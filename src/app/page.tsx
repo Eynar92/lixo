@@ -44,26 +44,26 @@ export default function Home() {
 
   }, [imageSrc]);
 
-  const handleOnCapture = () => {
-    const image = webcamRef.current?.getScreenshot();
-    image && setImageSrc(image);
-  }
+  // const handleOnCapture = () => {
+  //   const image = webcamRef.current?.getScreenshot();
+  //   image && setImageSrc(image);
+  // }
 
-  const handleResetImage = () => {
-    setImageSrc(null)
-  }
+  // const handleResetImage = () => {
+  //   setImageSrc(null)
+  // }
 
-  const handleSaveImage = async () => {
-    const response = await fetch('/api/cloudinary/upload', {
-      method: 'GET',
-      // body: JSON.stringify({
-      //   imageSrc
-      // })
-    })
+  // const handleSaveImage = async () => {
+  //   const response = await fetch('/api/cloudinary/upload', {
+  //     method: 'GET',
+  //     // body: JSON.stringify({
+  //     //   imageSrc
+  //     // })
+  //   })
 
-    console.log(response.json);
+  //   console.log(response.json);
 
-  }
+  // }
 
   return (
     <main className="py-4 layout h-dvh">
