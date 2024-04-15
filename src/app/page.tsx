@@ -5,44 +5,44 @@ import { Button, Container } from "@/components";
 import Webcam from "react-webcam";
 import { CldUploadButton, CldUploadWidget } from 'next-cloudinary';
 
-const videoConstraints = {
-  height: 1080,
-  width: 1920,
-  aspectRatio: 0.5625,
-  facingMode: "environment"
-}
+// const videoConstraints = {
+//   height: 1080,
+//   width: 1920,
+//   aspectRatio: 0.5625,
+//   facingMode: "environment"
+// }
 
 export default function Home() {
 
-  const [imageSrc, setImageSrc] = useState();
-  const [url, setUrl] = useState('');
-  const webcamRef = useRef<Webcam>(null);
+  // const [imageSrc, setImageSrc] = useState();
+  // const [url, setUrl] = useState('');
+  // const webcamRef = useRef<Webcam>(null);
 
-  useEffect(() => {
-    if (!imageSrc) return;
-    (async function run() {
-      const formData = new FormData();
-      formData.append('file', imageSrc);
+  // useEffect(() => {
+  //   if (!imageSrc) return;
+  //   (async function run() {
+  //     const formData = new FormData();
+  //     formData.append('file', imageSrc);
 
-      try {
-        const response = await fetch('https://api.cloudinary.com/v1_1/dzib8jnnl/image/upload', {
-          method: 'POST',
-          body: formData
-        });
+  //     try {
+  //       const response = await fetch('https://api.cloudinary.com/v1_1/dzib8jnnl/image/upload', {
+  //         method: 'POST',
+  //         body: formData
+  //       });
 
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status} - ${response.statusText}`);
-        }
+  //       if (!response.ok) {
+  //         throw new Error(`Error: ${response.status} - ${response.statusText}`);
+  //       }
 
-        const data = await response.json();
-        setUrl(data.url);
-        console.log('Upload successful:', data);
-      } catch (error) {
-        console.error('Upload failed:', error);
-      }
-    })();
+  //       const data = await response.json();
+  //       setUrl(data.url);
+  //       console.log('Upload successful:', data);
+  //     } catch (error) {
+  //       console.error('Upload failed:', error);
+  //     }
+  //   })();
 
-  }, [imageSrc]);
+  // }, [imageSrc]);
 
   // const handleOnCapture = () => {
   //   const image = webcamRef.current?.getScreenshot();
