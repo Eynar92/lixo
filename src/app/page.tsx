@@ -18,7 +18,7 @@ export default function Home() {
   const api_key = process.env.CLOUDINARY_API_KEY!;
   const api_secret = process.env.CLOUDINARY_API_SECRET!;
 
-  const [imageSrc, setImageSrc] = useState();
+  const [imageSrc, setImageSrc] = useState<string | null>();
   const [url, setUrl] = useState('');
   const webcamRef = useRef<Webcam>(null);
 
